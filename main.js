@@ -52,6 +52,7 @@ function my_keydown(e)
 	and make canvas border 'red'. */
 if((ball_x==hole_x)&&(ball_y==hole_y)){
 	canvas.remove(ball_obj);
+	console.log("you did it :D")
 document.getElementById("hd3").innerHTML="you did it :D";
 document.getElementById("myCanvas").style.bordercolor ="red";
 
@@ -84,11 +85,11 @@ document.getElementById("myCanvas").style.bordercolor ="red";
 	function up()
 	{
 		// Write a code to move ball upward.
-		if(ball_y >=0)
+		if(ball_y >=5)
 		{
         ball_y = ball_y - block_image_height;
 		console.log("block image height = " + block_image_height);
-		console.log("when up key is pressed, x" + ball_x + ", y = " + ball_y)
+		console.log("when up key is pressed, x" + ball_x + ", Y = " + ball_y)
 		canvas.remove(ball_obj);
 		new_image();
 		}
@@ -97,22 +98,35 @@ document.getElementById("myCanvas").style.bordercolor ="red";
 	function down()
 	{
 		 // Write a code to move ball downward.
+		if(ball_y <=450)
+		{
+        ball_y = ball_y - block_image_height;
+		console.log("block image height = " + block_image_height);
+		console.log("when down key is pressed, x" + ball_x + ", Y = " + ball_y)
+		canvas.remove(ball_obj);
+		new_image();
 	}
 
 	function left()
 	{
 		if(ball_x >5)
 		{
-			// Write a code to move ball left side.
-		}
+        ball_x = ball_x - block_image_width;
+		console.log("block image width = " + block_image_width);
+		console.log("when left key is pressed, x" + ball_x + ", Y = " + ball_y)
+		canvas.remove(ball_obj);
+		new_image();
 	}
 
 	function right()
 	{
 		if(ball_x <=1050)
 		{
-			// Write a code to move ball right side.
-		}
+        ball_x = ball_x - block_image_width;
+		console.log("block image width = " + block_image_width);
+		console.log("when right key is pressed, x" + ball_x + ", Y = " + ball_y)
+		canvas.remove(ball_obj);
+		new_image();
 	}
 	
 }
